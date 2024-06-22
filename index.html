@@ -10,6 +10,8 @@
       href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap"
       rel="stylesheet"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <style>
       body {
         font-family: "Alfa Slab One", sans-serif;
@@ -35,7 +37,7 @@
       h1 {
         text-align: center;
         color: #ede9e9;
-        margin-bottom: 30px; /* Mengubah margin-bottom menjadi 30px agar h1 lebih ke atas dari box login */
+        margin-bottom: 60px; /* Mengubah margin-bottom menjadi 30px agar h1 lebih ke atas dari box login */
         text-shadow: 2px 2px 4px #000000;
       }
       p {
@@ -96,7 +98,11 @@
   </head>
   <body>
     <h1>Selamat Datang Di Web Pengecekan Khodam</h1>
-    <form onsubmit="return checkKhodam(event)">
+    <form
+      onsubmit="return checkKhodam(event)"
+      data-aos="fade-down"
+      data-aos-duration="3000"
+    >
       <p>
         Masukkan nama Kamu untuk mengetahui khodam apa yang sedang bersamamu
       </p>
@@ -104,7 +110,7 @@
       <button type="submit">Cek Khodam</button>
       <div id="message"></div>
     </form>
-    <div class="footer">
+    <div class="footer" data-aos="fade-up" data-aos-duration="3000">
       Copyright &copy; 2024
       <span style="color: rgba(116, 182, 218, 0.8)">mamank racing</span>
     </div>
@@ -115,31 +121,30 @@
         event.preventDefault();
         var nama = document.getElementById("nama").value.trim();
         var khodams = [
-          "(Pocong Kesasar)",
-          "(Kuntilanak Menyanyi)",
-          "(Tuyul Penggembala Kambing)",
-          "(Genderuwo Penggemar Rujak)",
-          "(Sundel Bolong Pecinta Drama)",
-          "(Wewe Gombel Pemilik Kucing)",
-          "(Jenglot Pencinta Kopi)",
-          "(Buto Ijo Pemakan Salad)",
+          "<img src='01.PNG'style='float: right; width: 130px; height: 130px;'><br>(Pocong Kesasar)",
+          ",,Khodam kamu kabur,,",
+          "<img src='02.JPG'style='float: right; width: 130px; height: 130px;'><br>(Tuyul Penggembala Kambing)",
+          "Khodam kamu sudah minggat,,",
+          "<img src='03.JPEG'style='float: right; width: 130px; height: 130px;'><br>(Sundel Bolong Pecinta Drama)",
+          ",,Khodam kamu lagi masak,,",
+          "<img src='04.PNG'style='float: right; width: 130px; height: 130px;'><br>(Jenglot Pencinta Kopi)",
+          ",,Buto ijo pakek sempak bolong, belikan sempak baru!!",
           "(Leak Penari Balet)",
           "(Babi Ngepet Ahli Investasi)",
           "(Gendruwo Stylist)",
-          "(Tengkorak Pemecah Kacang)",
-          "(Barong Penjaga Toko)",
+          ",,Silahkan coba lagi,,",
           "(Siluman Ular Pemilik Salon)",
-          "(Hantu Pecinta Kuliner)",
+          ",,Khodam kamu lagi mandi, coba cek di sumur,,",
           "(Setan Gundul Hobi Mancing)",
           "(Nyai Blorong Pengusaha Sukses)",
           "(Mak Lampir Penggemar Traveling)",
           "(Nyai Roro Kidul Versi Modern)",
-          "(Suster Ngesot Pecinta Marathon)",
+          ",,Khodam kamu lagi malas, coba cek di kamar tidur,,",
           "(Kuntilanak Vlogger)",
           "(Tuyul CEO Startup)",
           "(Genderuwo Influencer)",
           "(Sundel Bolong sosialita)",
-          "(Wewe Gombel Pengusaha Startup)",
+          ",,Khodam kamu lagi mancing,,",
         ];
         var message = document.getElementById("message");
 
@@ -155,9 +160,13 @@
             "<br><br><small style='color:#ff5722;'>JANGAN LUPA KASIH MAKAN KHODAMMU BIAR TIDAK KABUR</small></div>";
         } else {
           message.innerHTML =
-            "<div style='background-color: #ff7043; color: #ffffff; padding: 10px; border-radius: 5px; margin-top: 20px; margin-bottom: 20px;'>Masukkan nama yang lebih panjang</div>";
+            "<div style='background-color: #ff7043; color: #ffffff; padding: 10px; border-radius: 5px; margin-top: 20px; margin-bottom: 20px;'>Khodam kabur... kejar </div>";
         }
       }
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
     </script>
   </body>
 </html>
